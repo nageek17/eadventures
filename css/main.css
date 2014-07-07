@@ -1,3 +1,8 @@
+.heading {
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
 .neighborhood-guides {
     background-color: #efefef;
     border-bottom: 1px solid #dbdbdb;
@@ -15,7 +20,7 @@
 
 .nav a {
   color: #5a5a5a;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: bold;
   padding: 14px 10px;
   text-transform: uppercase;
