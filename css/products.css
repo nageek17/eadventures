@@ -10,12 +10,18 @@
   display: inline;
 }
 
-.trips{
-    background-color: #f7f7f7;
+
+.jumbotron {
+  background-color: #f7f7f7;
+  
 }
 
-.trips a {
-    
-    float: bottom;
-    
+.trips .container{
+        border-top-style: solid;
+        border-top-color: #778899;
+
+}
+
+.thumbnail { 
+  margin-top: 20px;
 }

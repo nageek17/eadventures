@@ -16,7 +16,7 @@
     <div class="nav">
       <div class="container">
         <h1 class='heading'>Yosemite Backcountry Adventures</h1>
-        <ul class="pull-left">
+        <ul class="pull-left" class="active">
           <li><a href="home.php">about</a></li>
           <li><a href="products.php">Browse Trips</a></li>
         </ul>
