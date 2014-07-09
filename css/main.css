@@ -1,4 +1,4 @@
-.heading {
+.home .heading {
   font-family: 'Shift', sans-serif;
   font-weight: bold;
 }
@@ -30,29 +30,29 @@
   display: inline;
 }
 
-.jumbotron {
+.home .jumbotron {
   background-image:url('http://www.essenceinphotography.com/wp-content/uploads/2012/02/Yosemite-Valley-from-Glacier-Point.jpg');
   height: 500px;
 }
 
-.jumbotron .container {
+.home .jumbotron .container {
   position: relative;
   top:100px;
 }
 
-.jumbotron h1 {
+.home .jumbotron h1 {
   color: #fff;
   font-size: 48px;  
   font-family: 'Shift', sans-serif;
   font-weight: bold;
 }
 
-.jumbotron p {
+.home .jumbotron p {
   font-size: 20px;
   color: #fff;
 }
 
-.learn-more {
+.home .learn-more {
   background-color: #f7f7f7;
 }
 
@@ -64,4 +64,25 @@
 
 .learn-more a {
   color: #00b0ff;
+}
+
+.trips .jumbotron {
+  background-color: #f7f7f7;
+  
+}
+
+/*  products css page */
+.trips .jumbotron p{
+  font-size: 15px;
+  
+}
+
+.trips .container{
+        border-top-style: solid;
+        border-top-color: #778899;
+
+}
+
+.trips .thumbnail { 
+  margin-top: 20px;
 }
