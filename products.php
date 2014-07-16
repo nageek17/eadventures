@@ -1,27 +1,40 @@
     <?php
     header(include 'header.php');
+   
+    $con=mysqli_connect("127.0.0.1","kdoung17","","eadventures");
+    
+    // Check connection
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
     ?>
     
+
+
   <div class="trips">
     <div class="jumbotron">
+        
+        
+        <?php
+        $result = mysqli_query($con,"SELECT * FROM trips;");
+        while($row = mysqli_fetch_array($result)) {
+        ?>
       <div class="container">
         <div class="row">
             <div class='col-md-4 thumbnail'>
-                <img src="http://www.backpacker.com/media/originals/JohnMuirTrailTuolumneMeadowstoDevilsPostpile157255.jpeg" >
+                <img src=<?php echo $row["image"]; ?> >
             </div>
             <div class='col-md-4'>
-                <h3>John Muir Trail</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-            </div>
+                <h3><?php echo $row["trip_name"]; ?></h3>
+                <p><?php echo $row["description"]; ?></p>
+                </div>
             <div class='col-md-4'>
                 <h3>Trip Information</h3>
                 <ul>
-                    <li>Dates: </li>
-                    <li>Trip Difficulty: </li>
-                    <li>Group Size: </li>
-                    <li>Cost: </li>
+                    <li>Length: <?php echo $row["length"]; ?> nights </li>
+                    <li>Difficulty: <?php echo $row["difficulty"]; ?></li>
+                    <li>Group Size: <?php echo $row["group_size"]; ?></li>
+                    <li>Cost: $<?php echo $row["cost"]; ?></li>
                 </ul>
     		    	<div class="caption">
                     <p><a href="#" class="btn btn-primary" role="button">Book now!</a></p>
@@ -30,33 +43,15 @@
           </div>
         </div>
         
-        <div class="container">
-        <div class="row">
-            <div class='col-md-4 thumbnail'>
-                <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/353/cache/half-dome-yosemite-clouds_35391_990x742.jpg" >
-            </div>
-            <div class='col-md-4'>
-                <h3>Half Dome</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-            </div>
-            <div class='col-md-4'>
-                <h3>Trip Information</h3>
-                <ul>
-                    <li>Dates: </li>
-                    <li>Trip Difficulty: </li>
-                    <li>Group Size: </li>
-                    <li>Cost: </li>
-                </ul>
-    			<div class="caption">
-                    <p><a href="#" class="btn btn-primary" role="button">Book now!</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php } 
+        mysqli_close($con);
+        ?>
         
     </div>
 </div>
- </body>
-</html>
+
+
+
+<?php
+    include ('footer.php');
+?>

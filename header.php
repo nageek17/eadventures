@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-  
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
@@ -21,9 +20,9 @@
           <li><a href="products.php">Browse Trips</a></li>
         </ul>
         <ul class="pull-right">
-          <li><a href="booking.html">Book trip</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="support.html">Support</a></li>
+          <li><a href="booking.php">Book trip</a></li>
+          <li><a href="support.php">Support</a></li>
+          <li><a href="login.php">Login</a></li>
         </ul>
       </div>
     </div>
