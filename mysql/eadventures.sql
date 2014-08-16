@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `eadventures`.`customers` (
   `last_name` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `address` BLOB NULL,
+  `password` VARCHAR(45) NULL,
   PRIMARY KEY (`customer_id`),
   UNIQUE INDEX `customer_id_UNIQUE` (`customer_id` ASC))
 ENGINE = InnoDB;

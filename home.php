@@ -1,5 +1,14 @@
     <?php
     include ('header.php');
+    
+    
+    $con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
+    
+    // Check connection
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+    
     ?>
     
   <div class='home'>
@@ -11,41 +20,30 @@
       </div>
     </div> 
     
-    <div class="neighborhood-guides">
+    <div class="featured-trips">
         <div class="container">
             <h2>Featured Trips</h2>
-            <p>Explore the details of our featured trips</p>
             <div class='row'>
+            
+            <?php
+            $result = mysqli_query($con,"SELECT * FROM trips;");
+            while($row = mysqli_fetch_array($result)) {
+            ?>
 	            <div class='col-md-4'>
 	                <div class="thumbnail">
-                        <img src="http://upload.wikimedia.org/wikipedia/commons/a/a3/Tuolumne_Meadows_Sunset.jpg" >
+                        <img src=<?php echo $row["image"]; ?> >
                         <div class="caption">
-                        <h3>Yosemite Valley</h3>
-                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Book now!</a></p>
+                        <h3><?php echo $row["trip_name"]; ?></h3>
+                         <p><?php echo $row["description"]; ?></p>
+                        <p><a href="booking.php" class="btn btn-primary" role="button">Book now!</a></p>
                       </div>
                     </div>
 	            </div>
-                <div class='col-md-4'>
-                    <div class="thumbnail">
-                        <img src="http://www.backpacker.com/media/originals/JohnMuirTrailTuolumneMeadowstoDevilsPostpile157255.jpeg">
-                        <div class="caption">
-                        <h3>John Muir Trail</h3>
-                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Book now!</a></p>
-                      </div>
-                    </div>
-	            </div>
-	            <div class='col-md-4'>
-	                <div class="thumbnail">
-                        <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/353/cache/half-dome-yosemite-clouds_35391_990x742.jpg">
-                        <div class="caption">
-                        <h3>Half Dome</h3>
-                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Button</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Book now!</a></p>
-                      </div>
-                    </div>
-	            </div>
+	            
+	        <?php } 
+	        mysqli_close($con);
+            ?>
+                
 	        </div>
         </div> 
     </div> 

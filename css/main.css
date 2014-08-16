@@ -3,19 +3,25 @@
   font-weight: bold;
 }
 
-.neighborhood-guides {
+.featured-trips {
     background-color: #efefef;
+    border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
+    
 }
 
-.neighborhood-guides h2{
+.featured-trips h2{
     color: #393c3d;
     font-size: 24px;
 }
 
-.neighborhood-guides p {
+.featured-trips p {
     font-size: 15px;
     margin-bottom: 13px;
+}
+
+.featured-trips .thumbnail{
+  height: 500px;
 }
 
 .nav a {
@@ -31,8 +37,9 @@
 }
 
 .home .jumbotron {
-  background-image:url('http://www.essenceinphotography.com/wp-content/uploads/2012/02/Yosemite-Valley-from-Glacier-Point.jpg');
-  height: 500px;
+  background-image:url(../img/yosemitecover.jpg);
+  height: 600px;
+  margin-bottom:0px;
 }
 
 .home .jumbotron .container {
@@ -48,7 +55,7 @@
 }
 
 .home .jumbotron p {
-  font-size: 20px;
+  font-size: 26px;
   color: #fff;
 }
 

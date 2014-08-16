@@ -1,7 +1,10 @@
     <?php
+    
+    include_once('jcart/jcart.php');
+
     header(include 'header.php');
    
-    $con=mysqli_connect("127.0.0.1","kdoung17","","eadventures");
+    $con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
     
     // Check connection
     if (mysqli_connect_errno()) {
@@ -31,14 +34,14 @@
             <div class='col-md-4'>
                 <h3>Trip Information</h3>
                 <ul>
-                    <li>Length: <?php echo $row["length"]; ?> nights </li>
-                    <li>Difficulty: <?php echo $row["difficulty"]; ?></li>
-                    <li>Group Size: <?php echo $row["group_size"]; ?></li>
-                    <li>Cost: $<?php echo $row["cost"]; ?></li>
+                    <li><strong>Length:</strong> <?php echo $row["length"]; ?> nights </li>
+                    <li><strong>Difficulty:</strong> <?php echo $row["difficulty"]; ?></li>
+                    <li><strong>Max Group Size:</strong> <?php echo $row["group_size"]; ?></li>
+                    <li><strong>Cost:</strong> $<?php echo $row["cost"]; ?></li>
                 </ul>
-    		    	<div class="caption">
-                    <p><a href="#" class="btn btn-primary" role="button">Book now!</a></p>
-              </div>
+    		    <div class="caption">
+                    <p><a href="/booking.php" class="btn btn-primary" role="button">Book now!</a></p>
+                </div>
             </div>
           </div>
         </div>
@@ -47,8 +50,14 @@
         mysqli_close($con);
         ?>
         
+        <div id="right-sidebar" class="right-sidebar">
+             <div id="jcart"><?php $jcart->display_cart();?></div>
+        </div>
+    
     </div>
 </div>
+
+
 
 
 
