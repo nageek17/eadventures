@@ -18,7 +18,7 @@
       <div class="container">
         <h1 class='heading'>Sierra Backcountry eAdventures</h1>
         <ul class="pull-left" class="active">
-          <li><a href="home.php">about</a></li>
+          <li><a href="index.php">about</a></li>
           <li><a href="products.php">Browse Trips</a></li>
         </ul>
         <ul class="pull-right">
