@@ -2,7 +2,7 @@
     include ('header.php');
     
     
-    $con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
+    $con=mysqli_connect("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/","adminqWFpsGm","PEmc8Zcl_xAU","eadventures");
     
     // Check connection
     if (mysqli_connect_errno()) {
