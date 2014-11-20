@@ -4,15 +4,6 @@
 // Check to see if POST data is not null 
 // If not null then create user db records
 // IF insert successful then save user email and id in session variables then redirect to account.php
-
- $con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
-    
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-
-
 ?>
 
 

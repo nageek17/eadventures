@@ -1,16 +1,7 @@
-    <?php
-    
+<?php
     include_once('jcart/jcart.php');
-
     header(include 'header.php');
-   
-    $con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
-    
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-    ?>
+?>
     
 
 

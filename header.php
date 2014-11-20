@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php 
+  session_start();
+  include ('dbconfig.php');
+    
+  //$con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
+  if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +27,9 @@
         <h1 class='heading'>Sierra Backcountry eAdventures</h1>
         <ul class="pull-left" class="active">
           <li><a href="index.php">about</a></li>
-          <li><a href="products.php">Browse Trips</a></li>
+          <li><a href="products.php" data-toggle="dropdown">Browse Trips<span class="caret"></span></a>
+          
+          </li>
         </ul>
         <ul class="pull-right">
           <li><a href="booking.php">Book trip</a></li>

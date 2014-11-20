@@ -1,15 +1,6 @@
-    <?php
+<?php
     include ('header.php');
-    
-    
-    $con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
-    
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-    
-    ?>
+?>
     
   <div class='home'>
     <div class="jumbotron">
@@ -29,7 +20,7 @@
             $result = mysqli_query($con,"SELECT * FROM trips;");
             while($row = mysqli_fetch_array($result)) {
             ?>
-	            <div class='col-md-4'>
+	            <div class='col-xs-12 col-sm-12 col-md-4'>
 	                <div class="thumbnail">
                         <img src=<?php echo $row["image"]; ?> >
                         <div class="caption">
@@ -40,7 +31,7 @@
                     </div>
 	            </div>
 	            
-	        <?php } 
+	        <?php  }
 	        mysqli_close($con);
             ?>
                 

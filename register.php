@@ -1,13 +1,6 @@
 <?php
     header(include 'header.php');
-    $con=mysqli_connect("kdoung17-eadventures-885147","kdoung17","","eadventures");
-    
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
 ?>
-    
     
 <?php
 // define variables and set to empty values
@@ -34,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if (empty($_POST["email"])) {
-    $emailErr = "email is required";
+    $emailErr = "Email is required";
   } else {
     $email = test_input($_POST["email"]);
   }
@@ -47,18 +40,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
     
-    
-    
 <div class='container'>
     <h1>Create account</h1>
         <p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-        <input type="text" name="first" class="reg" placeholder="First name"><br>
-        <input type="text" name="last" class="reg" placeholder="Last name"><br>
-        <input type="text" name="address" class="reg" placeholder="Address"><br>
+        <form action="register.php" method="post">
+        <input type="text" name="first" class="reg" placeholder="First name" autocomplete="off"> <span style='color:red;'> <?php echo $firstErr ?></span> <br>
+        <input type="text" name="last" class="reg" placeholder="Last name" autocomplete="off"> <span style='color:red;'> <?php echo $lastErr ?></span> <br>
+        <input type="text" name="address" class="reg" placeholder="Address" autocomplete="off"> <span style='color:red;'> <?php echo $addressErr ?></span> <br>
         </p>
-        <input type="text" name="email" class="reg" placeholder="Email Address"><br>
-        <input type="password" name="password" class="reg" placeholder="Password"><br>
+        <input type="text" name="email" class="reg" placeholder="Email Address" autocomplete="off"> <span style='color:red;'> <?php echo $emailErr ?></span> <br>
+        <input type="password" name="password" class="reg" placeholder="Password" autocomplete="off"> <span style='color:red;'> <?php echo $passwordErr ?></span> <br>
         <p class="action_bottom">
         <input type="submit" value="Sign Up" class="button">
         </p>
